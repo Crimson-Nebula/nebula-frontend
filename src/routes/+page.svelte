@@ -2,13 +2,22 @@
     import {onMount} from "svelte";
 
     function handleCredentialResponse(response) {
-        console.log("Encoded JWT ID token: " + response.credential);
+		let formData = new FormData();
+		formData.append("credential", response.credential);
+		fetch("http://localhost:5000/user/login", {
+			method: "POST",
+			body: formData
+		}).then(response => response.json())
+				.then(data => {
+					console.log(data);
+				})
     }
 
     onMount(() => {
         google.accounts.id.initialize({
             client_id: "358229656846-r8l2ot51j16mt7hdd6g63o9g3p5qo4p1.apps.googleusercontent.com",
-            callback: handleCredentialResponse
+            callback: handleCredentialResponse,
+			state_cookie_domain: "localhost",
         });
         google.accounts.id.renderButton(
             document.getElementById("buttonDiv"),
