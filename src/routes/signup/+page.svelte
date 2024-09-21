@@ -2,7 +2,7 @@
 
     async function submit() {
         try {
-            let rawResponse = await fetch("http://localhost:5000/user/create", {
+            let rawResponse = await fetch("http://localhost:5000/user/signup", {
                 method: "POST",
                 credentials: "include",
                 headers: {
@@ -15,7 +15,7 @@
             console.log(response);
         } catch (error) {
             // Not logged in, redirect to login
-            window.location.replace(window.location.origin + "/login");
+            //window.location.replace(window.location.origin + "/login");
         }
     }
 

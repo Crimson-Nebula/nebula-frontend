@@ -12,7 +12,8 @@
         .then(response => response.json())
         .then(data => {
             if (data['status'] == "OK") {
-
+                // redirect to home page
+                window.location.replace(window.location.origin + "/");
             } else if (data['status'] == "CREATE_USER") {
                 // redirect to create user page
                 window.location.replace(window.location.origin + "/signup");
