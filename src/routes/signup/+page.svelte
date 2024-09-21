@@ -1,5 +1,7 @@
 <script>
-
+    import { Root } from 'postcss';
+import '../../app.css';
+import { Button } from "bits-ui";
     async function submit() {
         try {
             let rawResponse = await fetch("http://localhost:5000/user/signup", {
@@ -38,9 +40,22 @@
         }
     }
 </script>
-
-<div>
-    <input type="text" bind:value={username} placeholder="Username" />
-    <button on:click={submit}>Submit</button>
-    <button on:click={logout}>Logout</button>
+<div class="flex items-center justify-center prose">
+    <div class="card bg-neutral text-neutral-content w-96">
+        <div class = "flex card-body items-center text-center">
+            <h1>Sign Up</h1>
+            <div class = "flex flex-col gap-4">
+                <label class="input input-bordered flex items-center gap-2">
+                    Username:
+                    <input type="text" bind:value={username}/>
+                </label>
+                <Button.Root on:click = {submit} class="btn btn-primary">
+                    Submit
+                </Button.Root>
+            </div>
+            
+        </div>
+    </div>
 </div>
+
+
