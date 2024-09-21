@@ -1,5 +1,4 @@
 /** @type {import('tailwindcss').Config} */
-import daisyui from "daisyui"
 
 export default {
   content: ['./src/**/*.{html,js,svelte,ts}'],
@@ -7,7 +6,8 @@ export default {
     extend: {},
   },
   plugins: [
-    daisyui,
+    require('@tailwindcss/typography'),
+    require("daisyui"),
   ],
 }
 
