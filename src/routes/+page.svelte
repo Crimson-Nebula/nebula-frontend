@@ -1,22 +1,12 @@
 <script>
     import '../app.css';
+    import LoginModal from "../components/LoginModal.svelte";
 
-    async function logout() {
-        try {
-            let rawResponse = await fetch("http://localhost:5000/user/logout", {
-                method: "GET",
-                credentials: "include",
-                headers: {
-                    'Accept': 'application/json',
-                }
-            })
-            let response = await rawResponse.json();
-            console.log(response);
-        } catch (error) {
-            // Not logged in
-        }
-    }
 </script>
 
-<h1>Nebula</h1>
-<button on:click={logout} class="btn">Logout</button>
+<div class="prose flex justify-center">
+    <div>
+        <h1>Nebula</h1>
+        <LoginModal />
+    </div>
+</div>

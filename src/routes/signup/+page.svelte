@@ -17,7 +17,7 @@ import { Button } from "bits-ui";
             console.log(response);
         } catch (error) {
             // Not logged in, redirect to login
-            //window.location.replace(window.location.origin + "/login");
+            window.location.replace(window.location.origin + "/login");
         }
     }
 
@@ -33,10 +33,9 @@ import { Button } from "bits-ui";
                 }
             })
             let response = await rawResponse.json();
-            console.log(response);
+            window.location.replace(window.location.origin + "/");
         } catch (error) {
-            // Not logged in, redirect to login
-            //window.location.replace(window.location.origin + "/login");
+            // Not logged in
         }
     }
 </script>
