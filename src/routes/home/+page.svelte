@@ -6,7 +6,7 @@
 
     async function getFeed() {
         try {
-            let rawResponse = await fetch("http://localhost:5000/user/feed", {
+            let rawResponse = await fetch("http://localhost:5000/feed", {
                 method: "GET",
                 credentials: "include",
                 headers: {
