@@ -22,6 +22,7 @@
 
     onMount(() => {
         //Call API
+        getFeed();
     });
     
 </script>
