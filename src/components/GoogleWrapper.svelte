@@ -38,9 +38,5 @@
     });
 </script>
 
-<svelte:head>
-    <script src="https://accounts.google.com/gsi/client" async></script>
-</svelte:head>
-
 <div id="buttonDiv" style="color-scheme: light"></div>
 

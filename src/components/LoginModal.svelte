@@ -31,3 +31,7 @@
         </Dialog.Content>
     </Dialog.Portal>
 </Dialog.Root>
+
+<svelte:head>
+    <script src="https://accounts.google.com/gsi/client" async></script>
+</svelte:head>

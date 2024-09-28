@@ -1,7 +1,7 @@
 <script>
     import { Root } from 'postcss';
-import '../../app.css';
-import { Button } from "bits-ui";
+    import '../../app.css';
+    import { Button } from "bits-ui";
     async function submit() {
         try {
             let rawResponse = await fetch("http://localhost:5000/user/signup", {
