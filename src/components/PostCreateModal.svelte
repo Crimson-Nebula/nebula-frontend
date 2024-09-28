@@ -1,6 +1,7 @@
 <script lang="ts">
     import { Dialog, Button } from "bits-ui";
     import {fade} from "svelte/transition";
+    import { endpoint } from "$lib";
     import '../app.css';
 
     let content = "";
@@ -16,7 +17,7 @@
         }
 
         try {
-            let rawResponse = await fetch("http://localhost:5000/post/create", {
+            let rawResponse = await fetch(`${endpoint}/post/create`, {
                 method: "POST",
                 credentials: "include",
                 headers: {
@@ -32,7 +33,6 @@
         } catch (error) {
             // Not logged in, redirect to login
             console.log(error)
-            //window.location.replace(window.location.origin + "/login");
         }
         dialogOpen = false;
     }

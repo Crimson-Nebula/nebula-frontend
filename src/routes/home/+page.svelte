@@ -1,12 +1,13 @@
 <script lang="ts">
     import {onMount} from "svelte";
     import '../../app.css';
+    import { endpoint } from "$lib";
 
     let posts:any = [];
 
     async function getFeed() {
         try {
-            let rawResponse = await fetch("http://localhost:5000/feed", {
+            let rawResponse = await fetch(`${endpoint}/feed`, {
                 method: "GET",
                 credentials: "include",
                 headers: {

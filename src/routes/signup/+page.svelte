@@ -2,9 +2,11 @@
     import { Root } from 'postcss';
     import '../../app.css';
     import { Button } from "bits-ui";
+    import { endpoint } from "$lib/index";
+
     async function submit() {
         try {
-            let rawResponse = await fetch("http://localhost:5000/user/signup", {
+            let rawResponse = await fetch(`${endpoint}/user/signup`, {
                 method: "POST",
                 credentials: "include",
                 headers: {
@@ -16,8 +18,8 @@
             let response = await rawResponse.json();
             console.log(response);
         } catch (error) {
-            // Not logged in, redirect to login
-            window.location.replace(window.location.origin + "/login");
+            // Not logged in, redirect to home
+            window.location.replace(window.location.origin + "/");
         }
     }
 
@@ -25,7 +27,7 @@
 
     async function logout() {
         try {
-            let rawResponse = await fetch("http://localhost:5000/user/logout", {
+            let rawResponse = await fetch(`${endpoint}/user/logout`, {
                 method: "GET",
                 credentials: "include",
                 headers: {

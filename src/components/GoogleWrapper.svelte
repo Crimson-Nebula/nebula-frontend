@@ -1,11 +1,12 @@
 <script lang="ts">
     import {onMount} from "svelte";
+    import { endpoint } from "$lib/index";
     import '../app.css';
 
     function handleCredentialResponse(response: any) {
         let formData = new FormData();
         formData.append("credential", response.credential);
-        fetch("http://localhost:5000/user/login", {
+        fetch(`${endpoint}/user/login`, {
             method: "POST",
             credentials: "include",
             body: formData
