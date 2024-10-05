@@ -7,7 +7,7 @@
 
     async function getFeed() {
         try {
-            let rawResponse = await fetch(`${endpoint}/feed`, {
+            let rawResponse = await fetch(`${endpoint}/feed/`, {
                 method: "GET",
                 credentials: "include",
                 headers: {
