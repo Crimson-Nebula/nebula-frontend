@@ -27,7 +27,7 @@
 
     async function logout() {
         try {
-            let rawResponse = await fetch(`${endpoint}/user/logout`, {
+            let rawResponse = await fetch(`${endpoint}/user/logout/`, {
                 method: "GET",
                 credentials: "include",
                 headers: {
