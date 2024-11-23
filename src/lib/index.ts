@@ -1,2 +1,2 @@
 // place files you want to import through the `$lib` alias in this folder.
-export const endpoint:string = "https://nebula.devilsplan.xyz"
+export const endpoint:string = "https://nebula.kimjammer.com"
